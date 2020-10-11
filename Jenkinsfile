@@ -21,7 +21,7 @@ node('master')
         sh 'docker build -t ' + image_url + ' .'
     }
     stage('run') {
-      sh 'docker run -d -p' + mapped_port + ':' + app_port + ' --name ' + reponame + ' ' + image_url
+      sh 'docker run -d -p' + mapped_port + ':' + app_port + ' --name ' + reponame + '_' + mapped_port + ' ' + image_url
     }
     stage('test') {
       sh 'curl http://localhost:' + mapped_port
