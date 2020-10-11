@@ -1,3 +1,5 @@
+Random ran = new Random();
+int x = ran.nextInt(6) + 5;
 def reponame="simple_flask_app"
 def registry_url="registry.dougan.io:8000"
 def image_name=reponame
