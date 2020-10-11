@@ -1,12 +1,11 @@
 Random ran = new Random();
-int x = ran.nextInt(6) + 5;
+int mapped_port = ran.nextInt(4000) + 4000;
 def reponame="simple_flask_app"
 def registry_url="registry.dougan.io:8000"
 def image_name=reponame
 def image_tag="latest"
 def image_url=registry_url + '/' + reponame + ':' + image_tag
 def app_port=80
-def mapped_port=8000
 node('master')
 {
     stage('checkout') {
